@@ -1,0 +1,6 @@
+flask==1.1.2
+mysqlclient==2.0.3
+flask-sqlalchemy==2.5.1
+Flask-Script==.0.6
+flask-sqlacodegen==1.1.8
+SQLAlchemy==1.4.3

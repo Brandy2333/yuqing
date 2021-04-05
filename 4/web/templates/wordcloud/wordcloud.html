@@ -1,0 +1,50 @@
+<head>
+    <title>中传要闻</title>
+    <link rel="shortcut icon" href="{{ buildStaticUrl('/images/favicon.ico') }}">
+</head>
+<body>
+    <h1>
+        中传要闻
+    </h1>
+    <form>
+        <input type="text" name="wanted" value="" default="中国">
+        <input type="submit",value="搜索">
+    </form>
+    <!-- <img src={{ buildStaticUrl('/outputs/news.jpg') }}><br> -->
+    <img src={{ buildStaticUrl(href) }}><br>
+    <!-- <li>
+        <a href="#"><i class="fa fa-sitemap"></i> 权限管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a href="{{buildUrl('/permission')}}">模块权限管理</a>
+            </li>
+            <li>
+                <a href="{{buildUrl('/permission/url')}}">页面权限管理</a>
+            </li>
+            <li>
+                <a href="{{buildUrl('/permission/user')}}">用户角色管理</a>
+            </li>
+        </ul>
+    </li> -->
+    <tbody>
+        {% if list %}
+        {% for item in list %}
+        <tr>
+            <font size='5'>
+                <a href="{{item.newsurl}}">{{ item.id }}&nbsp{{ item.title }}</a><br>
+            </font>
+            <!-- <a href="{{item.newsurl}}">{{ item.newsurl }}</a><br> -->
+            <!-- <th>{{ item.department }}</th><br> -->
+            <th>{{ item.date }}</th><br>
+            <!-- <th>{{ item.count }}</th><br> -->
+            <th>{{ item.content }}</th><br>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td>暂无所要查询数据</td>
+        </tr>
+        {% endif %}
+    </tbody>
+
+</body>
